@@ -4,7 +4,3 @@ server:
 spring:
   application:
     name: banking-service
-
-customer-service:
-  endpoints:
-    url: http://localhost:9002/customer
