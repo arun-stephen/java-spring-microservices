@@ -1,4 +1,4 @@
-## Microservices interact with H2 in-memory Database
+## Microservices interact with in-memory H2 Database
 Each service can have its own database to store the data which will avoid tight coupling between services. This example shows the interaction between microservices and the in-memory H2 database.
 
 The below microservice design pattern used for this example
