@@ -46,7 +46,7 @@ public class BankController {
     }
 
     @GetMapping("/checkBalance/{custId}")
-    public String checkBalanceByCustId(@PathVariable long custId) throws Exception {
+    public String checkBalanceByCustId(@PathVariable final long custId) throws Exception {
         return bankingService.checkBalanceByCustId(custId);
     }
 
