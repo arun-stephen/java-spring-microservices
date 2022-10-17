@@ -2,8 +2,8 @@
 Each service can have its own database to store the data which will avoid tight coupling between services. This example shows the interaction between microservices and the MySQL database.
 
 The below microservice design pattern used for this example
-1. service per database: Each service has its own database to store the data and also, it has the ability to run the application individually without having the dependency with other services (loosely coupled)
-2. Aggregate pattern: The `banking-service` can interact with other services to construct the expected response to the client.
+1. **Service per Database:** Each service has its own database to store the data and also, it has the ability to run the application individually without having the dependency with other services (loosely coupled)
+2. **Aggregate Pattern:** The `banking-service` can interact with other services to construct the expected response to the client.
 
 ### Process of service interaction to MySQL Database:
 Please refer the below architecture diagram to understand about the services interacting with MySQL database.
@@ -11,7 +11,7 @@ Please refer the below architecture diagram to understand about the services int
 
 ### Service Details:
 First we have to download the MySQL server from https://dev.mysql.com/downloads/mysql/ link then, follow the instructions from https://www.lifewire.com/how-to-install-mysql-windows-10-4584021 page.
-Once the MySQL DB setup was done then, update the DB credentials to all the services through configuration. Otherwise, you may face DB connection issue from the services
+Once the MySQL DB setup was done then, update the DB credentials to all the services through configuration. Otherwise, you may face database connectivity issue from the services
 
 I have created the below 4 services and specify the more details about the services
 
@@ -23,12 +23,12 @@ I have created the below 4 services and specify the more details about the servi
 
 `loan-service`: It's responsible for check for loan eligibility, approve/decline the loan, validating the customer details, save and monitor all loan transactions.
 
-|S.No| Service-Name|Port| API |
------|-------------|----|-----|
-1| service-registry|8761| N/A |
-2| banking-service|9001| http://localhost:9001/account|
-3| customer-service|9002| http://localhost:9002/customer|
-4| loan-service|9003| http://localhost:9002/loan|
+|S.No| Service-Name|Port| API                            |
+-----|-------------|----|--------------------------------|
+1| service-registry|8761| N/A                            |
+2| banking-service|9001| http://localhost:9001/account  |
+3| customer-service|9002| http://localhost:9002/customer |
+4| loan-service|9003| http://localhost:9003/loan     |
 
 
 ### API Details:
