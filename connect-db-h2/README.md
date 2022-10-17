@@ -2,8 +2,8 @@
 Each service can have its own database to store the data which will avoid tight coupling between services. This example shows the interaction between microservices and the in-memory H2 database.
 
 The below microservice design pattern used for this example
-1. service per database: Each service has its own database to store the data and also, it has the ability to run the application individually without having the dependency with other services (loosely coupled)
-2. Aggregate pattern: The `banking-service` can interact with other services to construct the expected response to the client.
+1. **Service per Database:** Each service has its own database to store the data and also, it has the ability to run the application individually without having the dependency with other services (loosely coupled)
+2. **Aggregate Pattern:** The `banking-service` can interact with other services to construct the expected response to the client.
 
 ### Process of service interaction to H2 Database:
 Please refer the below architecture diagram to understand about the services interacting with H2 database.
@@ -20,12 +20,12 @@ I have created the below 4 services and specify the more details about the servi
 
 `loan-service`: It's responsible for check for loan eligibility, approve/decline the loan, validating the customer details, save and monitor all loan transactions.
 
-|S.No| Service-Name|Port| API |H2-console| DB Url |
------|-------------|----|-----|----------|--------|
-1| service-registry|8761| N/A |N/A| N/A    |
-2| banking-service|9001| http://localhost:9001/account|http://localhost:9001/h2-console| jdbc:h2:mem:banking |
-3| customer-service|9002| http://localhost:9002/customer|http://localhost:9002/h2-console|jdbc:h2:mem:customer|
-4| loan-service|9003| http://localhost:9002/loan| http://localhost:9003/h2-console|jdbc:h2:mem:loan|
+|S.No| Service-Name|Port| API                            |H2-console| DB Url |
+-----|-------------|----|--------------------------------|----------|--------|
+1| service-registry|8761| N/A                            |N/A| N/A    |
+2| banking-service|9001| http://localhost:9001/account  |http://localhost:9001/h2-console| jdbc:h2:mem:banking |
+3| customer-service|9002| http://localhost:9002/customer |http://localhost:9002/h2-console|jdbc:h2:mem:customer|
+4| loan-service|9003| http://localhost:9003/loan     | http://localhost:9003/h2-console|jdbc:h2:mem:loan|
 
 We can interact to H2-console directly from the browser by hitting the above H2-console url and also, make sure you had given the correct JDBC URL to connect the H2 Database. Click on `Test Connection` button to validate the database connection.
 
