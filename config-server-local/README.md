@@ -27,16 +27,16 @@ I have created the below 4 services and specify the more details about the servi
 4| customer-service | 9002 | http://localhost:9002/customer |http://localhost:9002/h2-console|jdbc:h2:mem:customer|
 
 The `banking-service` profile activated in `config-server` as follows
-http://localhost:9003/banking-service/default
-http://localhost:9003/banking-service/dev
-http://localhost:9003/banking-service/qa
-http://localhost:9003/banking-service/prod
+1. http://localhost:9003/banking-service/default
+2. http://localhost:9003/banking-service/dev
+3. http://localhost:9003/banking-service/qa
+4. http://localhost:9003/banking-service/prod
 
 The `customer-service` profile activated in `config-server` as follows
-http://localhost:9003/customer-service/default
-http://localhost:9003/customer-service/dev
-http://localhost:9003/customer-service/qa
-http://localhost:9003/customer-service/prod
+1. http://localhost:9003/customer-service/default
+2. http://localhost:9003/customer-service/dev
+3. http://localhost:9003/customer-service/qa
+4. http://localhost:9003/customer-service/prod
 
 ### API Details:
 Please refer the below list of APIs provided by the `banking-service`
