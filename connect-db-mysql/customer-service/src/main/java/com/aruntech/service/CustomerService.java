@@ -5,6 +5,7 @@ import java.util.Random;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.aruntech.entity.Customer;
+import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import com.aruntech.model.UpdateBalanceRequest;
 import com.aruntech.model.CreateCustomerRequest;
@@ -35,6 +36,7 @@ public class CustomerService {
         return customer;
     }
 
+    @Transactional
     public Customer createCustomer(final CreateCustomerRequest request) {
         logger.info("customer-service: Create the new customer");
         Customer customer = new Customer();
@@ -50,6 +52,7 @@ public class CustomerService {
         return customer;
     }
 
+    @Transactional
     public Customer updateCustomer(final long id, final UpdateBalanceRequest request) {
         logger.info("customer-service: Update the customer details with id {}", id);
         Customer customer = customerRepository.findById(id).get();
@@ -64,6 +67,7 @@ public class CustomerService {
         return customer;
     }
 
+    @Transactional
     public void deleteCustomer(final long id) {
         logger.info("customer-service: Delete the customer with id {}", id);
         Customer customer = customerRepository.findById(id).get();
