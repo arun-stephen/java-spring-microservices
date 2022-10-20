@@ -6,7 +6,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/arun-stephen/java-spring-microservices/config-server-git/config-remote-store
+          uri: https://github.com/arun-stephen/microservice-remote-config
           search-paths:
             - '*service'
   application:
