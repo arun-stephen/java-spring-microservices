@@ -1,5 +1,5 @@
 ## API Documentation using Swagger
-API documentation will be really helpful to understand the API request, and it's response. It's really helpful for the developers and improve the productivity.
+API documentation will be really helpful to understand the API request, and it's response. It's really helpful for the developers to improve the productivity by accessing this API documentation.
 
 ### Service Details:
 I have created the below 3 services and specify the more details about the services
@@ -24,11 +24,11 @@ After that, click on `Connect` button to login to the actual H2 database. You ca
 ![h2_db.png](_img/h2_db.png)
 
 ## Access API Documentation Page
-The `banking-service` swagger API documentation can be accessed through http://localhost:9001/swagger-ui.html url. Please refer the below screenshot for more reference.
+The `banking-service` swagger API documentation can be accessed through http://localhost:9001/swagger-ui.html url. Please refer the below screenshot for your reference.
 
 ![banking_service_doc.png](_img/banking_service_doc.png)
 
-The `customer-service` swagger API documentation can be accessed through http://localhost:9002/swagger-ui.html url. Please refer the below screenshot for more reference.
+The `customer-service` swagger API documentation can be accessed through http://localhost:9002/swagger-ui.html url. Please refer the below screenshot for your reference.
 
 ![customer_service_doc.png](_img/customer_service_doc.png)
 

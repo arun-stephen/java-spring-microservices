@@ -11,11 +11,11 @@
     </parent>
 
     <groupId>com.aruntech</groupId>
-    <artifactId>connect-db-h2</artifactId>
+    <artifactId>api-doc-swagger</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>connect-db-h2</name>
-    <description>Connect service to H2 DB</description>
+    <name>api-doc-swagger</name>
+    <description>API Documentation using Swagger</description>
 
     <modules>
         <module>service-registry</module>
