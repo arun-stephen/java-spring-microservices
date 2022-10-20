@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import com.aruntech.model.*;
 import org.slf4j.LoggerFactory;
 import java.text.SimpleDateFormat;
+import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import com.aruntech.entity.BankingTransaction;
 import com.aruntech.repository.BankingRepository;
@@ -22,6 +23,7 @@ public class BankingService {
     private final String DATE_FORMAT_STRING = "dd-MM-yyyy HH:mm:ss";
     private final Logger logger = LoggerFactory.getLogger(BankingService.class);
 
+    @Transactional
     public AccountCreateResponse createNewAccount(final AccountCreateRequest request) {
         logger.info("banking-service: Creating the new bank account");
         //create payload
@@ -57,6 +59,7 @@ public class BankingService {
         return response;
     }
 
+    @Transactional
     public TransactionResponse deposit(final TransactionRequest request) {
         logger.info("banking-service: Deposit the amount with payload {}", request);
         Customer customer = getCustomerInfo(request.getCustomerId());
@@ -66,6 +69,7 @@ public class BankingService {
         return updateBalance(customer, request.getAmount(), TransactionType.CREDIT);
     }
 
+    @Transactional
     public TransactionResponse withdraw(final TransactionRequest request) throws Exception {
         Customer customer = getCustomerInfo(request.getCustomerId());
         if(customer == null) {
@@ -158,6 +162,7 @@ public class BankingService {
         return strBuilder.toString();
     }
 
+    @Transactional
     public LoanResponse applyLoan(final LoanRequest request) {
         logger.info("banking-service: Apply for new loan with details {}", request);
         LoanResponse response = loanConsumer.applyLoan(request);

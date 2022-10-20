@@ -7,6 +7,7 @@ import com.aruntech.model.*;
 import org.slf4j.LoggerFactory;
 import com.aruntech.entity.Loan;
 import java.text.SimpleDateFormat;
+import javax.transaction.Transactional;
 import com.aruntech.entity.LoanTransaction;
 import com.aruntech.repository.LoanRepository;
 import org.springframework.stereotype.Service;
@@ -50,6 +51,7 @@ public class LoanService {
         return loans;
     }
 
+    @Transactional
     public LoanResponse applyLoan(final LoanRequest request) {
         logger.info("loan-service: Apply for the new loan with details {}", request);
         if(!checkCustomerDetails(request)) {
@@ -127,6 +129,7 @@ public class LoanService {
         return false;
     }
 
+    @Transactional
     public Loan updateLoan(final long loanId, final Loan loan) {
         logger.info("loan-service: Update the loan details with id {}", loanId);
         Loan loanData = loanRepository.findById(loanId).get();
@@ -141,6 +144,7 @@ public class LoanService {
         return loanData;
     }
 
+    @Transactional
     public void deleteLoan(final long loanId) {
         logger.info("loan-service: Remove the loan of loan id {}", loanId);
         Loan loan = loanRepository.findById(loanId).get();
