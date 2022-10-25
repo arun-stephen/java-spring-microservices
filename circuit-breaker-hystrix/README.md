@@ -21,15 +21,17 @@ I have created the below 4 services and specify the more details about the servi
 4| loan-service|9003| http://localhost:9003/loan     | http://localhost:9003/h2-console | jdbc:h2:mem:loan     |
 
 The hystrix dashboard can be accessed though the below urls and the dashboard will look like below
+
 ![hystrix_dashboard.png](_img/hystrix_dashboard.png)
 1. http://localhost:9001/hystrix
 2. http://localhost:9003/hystrix
 
 We need to define the hystrix streams by `http://{host}:{port}/actuator/hystrix.stream` and given the title then click on `Monitor Stream` button to monitor all the request with statistic details.
 The `banking-service` and `loan-service` streams will look like below
-![bank_service_stream.png](_img/bank_service_stream.png)
-![loan_service_stream.png](_img/loan_service_stream.png)
 
+![bank_service_stream.png](_img/bank_service_stream.png)
+
+![loan_service_stream.png](_img/loan_service_stream.png)
 
 ### API Details:
 Please refer the below list of APIs provided by the `banking-service`
