@@ -11,11 +11,11 @@
     </parent>
 
     <groupId>com.aruntech</groupId>
-    <artifactId>circuit-breaker-pattern</artifactId>
+    <artifactId>circuit-breaker-hystrix</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>circuit-breaker-pattern</name>
-    <description>Circuit Breaker Pattern</description>
+    <name>circuit-breaker-hystrix</name>
+    <description>Circuit Breaker Pattern using Hystrix</description>
 
     <modules>
         <module>service-registry</module>
