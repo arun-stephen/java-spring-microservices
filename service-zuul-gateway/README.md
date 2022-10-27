@@ -36,7 +36,7 @@ I have created the below 5 services and specify the more details about the servi
 4| loan-service|9003|
 5| gateway-service|9004|
 
-The `gateway-service` running on the port 9004 and able to access all the APIs through http://localhost:9004/* url.
+The `gateway-service` running on the port 9004 and able to access all the APIs through http://localhost:9004/ url.
 
 ### API Details:
 ___
