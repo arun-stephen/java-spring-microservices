@@ -35,6 +35,10 @@ spring:
                 name: loan-service
                 fallbackuri: forward:/loanFallback
 
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+
 management:
   endpoints:
     web:

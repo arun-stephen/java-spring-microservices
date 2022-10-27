@@ -1,10 +1,11 @@
-## Interacting microservices through API Gateway
+## Interacting microservices through API Cloud Gateway
 API Gateway is a common interface to interact with internal services without knowing about the host and port which is running. It's responsible for redirect the request to the respective services and send the response back to the client. It allows to handle the API failures and send some valuable message to the client.
 
 The below microservice design pattern used for this example
 1. **Service per Database:** Each service has its own database to store the data and also, it has the ability to run the application individually without having the dependency with other services (loosely coupled)
 2. **Single Responsibility:** Each service is responsible for managing single core functionality
 3. **Aggregate Pattern:** The `banking-service` can interact with other services to construct the expected response to the client.
+>**Note:** *Cloud gateway will support for both blocking and non-blocking I/O request*
 
 ### Architecture Diagram:
 ___
@@ -36,7 +37,7 @@ I have created the below 5 services and specify the more details about the servi
 4| loan-service|9003|
 5| gateway-service|9004|
 
-The `gateway-service` running on the port 9004 and able to access all the APIs through http://localhost:9004/* url.
+The `gateway-service` running on the port 9004 and able to access all the APIs through http://localhost:9004/ url.
 
 ### API Details:
 ___
