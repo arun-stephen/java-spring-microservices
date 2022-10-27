@@ -1,5 +1,4 @@
 ## Interacting microservices through API Gateway
-___
 API Gateway is a common interface to interact with internal services without knowing about the host and port which is running. It's responsible for redirect the request to the respective services and send the response back to the client. It allows to handle the API failures and send some valuable message to the client.
 
 The below microservice design pattern used for this example
@@ -36,8 +35,8 @@ I have created the below 5 services and specify the more details about the servi
 3| customer-service|9002|
 4| loan-service|9003|
 5| gateway-service|9004|
-The `gateway-service` running on the port 9004 and able to access all the APIs through http://localhost:9004/* url.
 
+The `gateway-service` running on the port 9004 and able to access all the APIs through http://localhost:9004/* url.
 
 ### API Details:
 ___
@@ -400,6 +399,7 @@ Response:
 ```
 
 ### Start and access Eureka server:
+___
 >**Note:** *We need to start the `service-registry` service before starting of any services(`banking-service`/`customer-service`/`loan-service`/`gateway-service`) to be registered with Eureka server.*
 
 Finally, the `banking-service`, `customer-service`, `loan-service` and `gateway-service` are registered with Eureka server which is running on the URL http://localhost:8761/. You can access the URL from the browser to see the list of services registered with Eureka server.
