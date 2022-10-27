@@ -4,10 +4,12 @@ The configuration server allow to maintain the different profile with different 
 Usually we may use different database configuration for different environment in software development so, define the database configuration to its relevant profile and switch to different configuration by activating its relevant profile to the service.
 
 ### Architecture Diagram:
+___
 Please refer the below architecture diagram to understand the config server interaction in microservice architecture.
 ![config_remote.png](_img/config_remote.png)
 
 ### Service Details:
+___
 I have created the below 4 services and specify the more details about the services
 
 `service-registry`: It's responsible for registering all services into Eureka server for service discovery. It will help to locate the services very easily.
@@ -40,104 +42,126 @@ The `customer-service` profile activated in `config-server` as follows
 
 Config server configuration available in https://github.com/arun-stephen/microservice-remote-config git repository. You can access the configuration in below pattern
 
-```http://{service.host}:{service.port}/{service.name}/{profile_name}/{tag-name}```
+>```http://{service.host}:{service.port}/{service.name}/{profile_name}/{tag-name}```
 
 ### API Details:
+___
 Please refer the below list of APIs provided by the `banking-service`
 
 **POST** http://localhost:9001/account
 
-payload:`{
-"name": "Arun",
-"amount": 2000.0,
-"phone": "xxxxxxxxxx",
-"email": "xxxx@gmail.com"
-}`
-
-response: `{
-"status": "success",
-"message": "Successfully created the bank account",
-"customerId": 1,
-"accountNo": 45877048
-}`
+Payload:
+```
+{
+    "name": "Arun",
+    "amount": 2000.0,
+    "phone": "xxxxxxxxxx",
+    "email": "xxxx@gmail.com"
+}
+```
+Response: 
+```
+{
+    "status": "success",
+    "message": "Successfully created the bank account",
+    "customerId": 1,
+    "accountNo": 45877048
+}
+```
 
 **POST** http://localhost:9001/account/deposit
 
-payload:`{
-"customerId": 1,
-"accountNo": 45877048,
-"amount": 1000.0
-}`
-
-response: `{
-"status": "success",
-"message": "Successfully updated the balance",
-"balance": 3000.0
-}`
+Payload:
+```
+{
+    "customerId": 1,
+    "accountNo": 45877048,
+    "amount": 1000.0
+}
+```
+Response: 
+```
+{
+    "status": "success",
+    "message": "Successfully updated the balance",
+    "balance": 3000.0
+}
+```
 
 **POST** http://localhost:9001/account/withdraw
 
-payload:`{
-"customerId": 1,
-"accountNo": 45877048,
-"amount": 500.0
-}`
-
-response: `{
-"status": "success",
-"message": "Successfully updated the balance",
-"balance": 2500.0
-}`
+Payload:
+```
+{
+    "customerId": 1,
+    "accountNo": 45877048,
+    "amount": 500.0
+}
+```
+Response: 
+```
+{
+    "status": "success",
+    "message": "Successfully updated the balance",
+    "balance": 2500.0
+}
+```
 
 **GET** http://localhost:9001/account/{custId}
 
-response: `{
-"id": 1,
-"name": "Arun",
-"accountNo": 45877048,
-"balance": 4000.0,
-"phone": "xxxxxxxxxx",
-"emailId": "xxxx@gmail.com"
-}`
+Response: 
+```
+{
+    "id": 1,
+    "name": "Arun",
+    "accountNo": 45877048,
+    "balance": 4000.0,
+    "phone": "xxxxxxxxxx",
+    "emailId": "xxxx@gmail.com"
+}
+```
 
 **GET** http://localhost:9001/account/checkBalance/{custId}
 
-response: `Arun your account number 45877048 has balance Rs:2500.0`
+Response: ```Arun your account number 45877048 has balance Rs:2500.0```
 
 **GET** http://localhost:9001/account/ministatement/{custId}
 
-response: `{
-"name": "Arun",
-"customerId": 1,
-"accountNo": 45877048,
-"balance": 2500.0,
-"transactions": [
+Response: 
+```
 {
-"customerId": 1,
-"accountNo": 45877048,
-"transactionType": "ACCOUNT_CREATED",
-"amount": 2000.0,
-"date": "16-10-2022 22:48:47",
-"id": 1
-},
-{
-"customerId": 1,
-"accountNo": 45877048,
-"transactionType": "CREDIT",
-"amount": 1000.0,
-"date": "16-10-2022 22:49:29",
-"id": 2
-},
-{
-"customerId": 1,
-"accountNo": 45877048,
-"transactionType": "DEBIT",
-"amount": 500.0,
-"date": "16-10-2022 22:49:49",
-"id": 3
+    "name": "Arun",
+    "customerId": 1,
+    "accountNo": 45877048,
+    "balance": 2500.0,
+    "transactions": [
+        {
+        "customerId": 1,
+        "accountNo": 45877048,
+        "transactionType": "ACCOUNT_CREATED",
+        "amount": 2000.0,
+        "date": "16-10-2022 22:48:47",
+        "id": 1
+        },
+        {
+        "customerId": 1,
+        "accountNo": 45877048,
+        "transactionType": "CREDIT",
+        "amount": 1000.0,
+        "date": "16-10-2022 22:49:29",
+        "id": 2
+        },
+        {
+        "customerId": 1,
+        "accountNo": 45877048,
+        "transactionType": "DEBIT",
+        "amount": 500.0,
+        "date": "16-10-2022 22:49:49",
+        "id": 3
+        }
+    ]
 }
-]
-}`
+```
 
 Actually the above APIs are internally make a call to `customer-service` to fetch the actual response. The `customer-service` also exposed the APIs which can be accessed directly.
 
@@ -145,69 +169,86 @@ Please refer the below list of APIs provided by the `customer-service`
 
 **GET** http://localhost:9002/customer/
 
-response: `[
-{
-"id": 1,
-"name": "Arun",
-"accountNo": 45877048,
-"balance": 2000.0,
-"phone": "xxxxxxxxxx",
-"emailId": "xxxx@gmail.com"
-}
-]`
+Response: 
+```
+[
+  {
+    "id": 1,
+    "name": "Arun",
+    "accountNo": 45877048,
+    "balance": 2000.0,
+    "phone": "xxxxxxxxxx",
+    "emailId": "xxxx@gmail.com"
+  }
+]
+```
 
 **GET** http://localhost:9002/customer/{custId}
 
-response: `{
-"id": 1,
-"name": "Arun",
-"accountNo": 45877048,
-"balance": 2000.0,
-"phone": "xxxxxxxxxx",
-"emailId": "xxxx@gmail.com"
-}`
+Response: 
+```
+{
+    "id": 1,
+    "name": "Arun",
+    "accountNo": 45877048,
+    "balance": 2000.0,
+    "phone": "xxxxxxxxxx",
+    "emailId": "xxxx@gmail.com"
+}
+```
 
 **POST** http://localhost:9002/customer
 
-payload:`{
-"name":"Arun",
-"amount": 2000.0,
-"phone":"xxxxxxxxxx",
-"emailId":"xxxx@gmail.com"
-}`
-
-response: `{
-"id": 1,
-"name": "Arun",
-"accountNo": 45877048,
-"balance": 2000.0,
-"phone": "xxxxxxxxxx",
-"emailId": "xxxx@gmail.com"
-}`
+Payload:
+```
+{
+    "name":"Arun",
+    "amount": 2000.0,
+    "phone":"xxxxxxxxxx",
+    "emailId":"xxxx@gmail.com"
+}
+```
+Response: 
+```
+{
+    "id": 1,
+    "name": "Arun",
+    "accountNo": 45877048,
+    "balance": 2000.0,
+    "phone": "xxxxxxxxxx",
+    "emailId": "xxxx@gmail.com"
+}
+```
 
 **PUT** http://localhost:9002/customer/{custId}
 
-payload:`{
-"id": 1,
-"accountNo": 45877048,
-"amount": 5000.0
-}`
-
-response: `{
-"id": 1,
-"name": "Arun",
-"accountNo": 45877048,
-"balance": 5000.0,
-"phone": "xxxxxxxxxx",
-"emailId": "xxxx@gmail.com"
-}`
+Payload:
+```
+{
+    "id": 1,
+    "accountNo": 45877048,
+    "amount": 5000.0
+}
+```
+Response: 
+```
+{
+    "id": 1,
+    "name": "Arun",
+    "accountNo": 45877048,
+    "balance": 5000.0,
+    "phone": "xxxxxxxxxx",
+    "emailId": "xxxx@gmail.com"
+}
+```
 
 **DELETE** http://localhost:9002/customer/{custId}
 
-response: None
+Response: ```None```
 
 ### Start and access Eureka server:
-*Note: We need to start the `service-registry` service before starting of any services(`banking-service`/`customer-service`) to be registered with Eureka server.*
+___
+>**Note:** *We need to start the `service-registry` service before starting of any services(`banking-service`/`customer-service`) to be registered with Eureka server.*
 
 Finally, the `banking-service` and `customer-service` are registered with Eureka server which is running on the URL http://localhost:8761/. You can access the URL from the browser to see the list of services registered with Eureka server.
 
