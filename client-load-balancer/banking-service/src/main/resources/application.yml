@@ -8,6 +8,10 @@ spring:
     username: sa
     password:
 
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+
 customer-service:
   ribbon:
     eureka:
