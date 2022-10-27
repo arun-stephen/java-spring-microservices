@@ -259,7 +259,7 @@ ___
 2. Add the `spring-cloud-server-config` dependency to config client project and add `@RefreshScope` annotation where you want to refresh the configuration
 3. Modify the configuration in git repository and also verify the same in profile url
 4. Just verify the application status by http://localhost:9001/actuator/health link and response might be ```status	"UP"``` or ```status "DOWN"```
-5. Refresh the configuration by http://localhost:9001/actuator/refresh url and the response has the list of properties has been modified like below
+5. Refresh the configuration by POST http://localhost:9001/actuator/refresh url and the response has the list of properties has been modified like below
     ```
     [
         "config.client.version",
