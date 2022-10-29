@@ -24,7 +24,7 @@ We can interact to H2-console directly from the browser by hitting the above H2-
 After that, click on `Connect` button to login to the actual H2 database. You can verify the schema and execute the query to validate the data from the database.
 ![h2_db.png](_img/h2_db.png)
 
-## Access API Documentation Page:
+### Access API Documentation Page:
 ___
 The `banking-service` swagger API documentation can be accessed through http://localhost:9001/swagger-ui.html url. Please refer the below screenshot for your reference.
 
