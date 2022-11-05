@@ -15,10 +15,13 @@ Once the application was started then, we need to validate the data was successf
 
 Once it is connected then, follow the below steps to validate the db changes
 1. Execute ```SELECT * FROM CUSTOMER;``` query to validate the schema and the value inserted into the table
+   
    ![h2_customer.png](_img/h2_customer.png)
 2. Execute the ```SELECT * FROM DATABASECHANGELOG;``` query to validate the execution of the db queries.
+   
    ![h2_dbchange.png](_img/h2_dbchange.png)
 3. Execute the ```SELECT * FROM DATABASECHANGELOGLOCK;``` query to verify the lock status of the database 
+   
    ![h2_dbchangelock.png](_img/h2_dbchangelock.png)
 
 We can also validate the db query execution status through actuator [endpoint](http://localhost:9002/actuator/liquibase).
