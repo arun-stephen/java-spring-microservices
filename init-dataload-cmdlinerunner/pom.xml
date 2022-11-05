@@ -15,7 +15,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>init-dataload-cmdlinerunner</name>
-    <description>Initially populate the data using dbscripts</description>
+    <description>Initially populate the data using CommandLineRunner</description>
 
     <modules>
         <module>customer-service</module>
