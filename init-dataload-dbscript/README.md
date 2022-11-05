@@ -9,7 +9,7 @@ I have created the below service and didn't use any database to persist the data
 -----|-------------|---------|--------------------------------|---------|
 1| customer-service | dynamic | http://localhost:9002/customer | H2 DB|
 
-Once the application was started then, we need to validate the data was successfully inserted into database or not. So, First we need to connect the database by using the below configuration
+Once the application was started then, we need to validate the data was successfully inserted into database or not. So, First we need to connect the database through [h2-console](http://localhost:9002/h2-console/) by using the below configuration
 
 ![h2_console.png](_img/h2_console.png)
 
