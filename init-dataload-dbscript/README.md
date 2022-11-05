@@ -1,9 +1,9 @@
-## Initially load schema and data to the H2 Database
-Some scenario, we have to create the required table and load the data to the database which will be used by the Microservice. So, we need to add the `schema.sql` and `data.sql` file to the services which will load the scripts once the database was connected through services.
+## Initially loading schema and data to H2 Database
+Some scenario, we have to create the required table and load the data to the database which will be used by the Microservice. So, we can create the `schema.sql` and `data.sql` files to the services which will load these scripts once the database was connected through services.
 
 ### Service Details:
 ___
-I have created the below 3 services and didn't use any database to persist the data. Instead of that the data will be maintained in the service itself, and it will be lost once the server is restarted. Please refer the below table to know the details about each services.
+I have created the below service and didn't use any database to persist the data. Instead of that the data will be maintained in the service itself, and it will be lost once the server is restarted. Please refer the below table to know the details about each service.
 
 |S.No| Service-Name| Port    | API                            | Database|
 -----|-------------|---------|--------------------------------|---------|
