@@ -11,10 +11,10 @@
     </parent>
 
     <groupId>com.aruntech</groupId>
-    <artifactId>init-dataload-dbscript</artifactId>
+    <artifactId>init-dataload-cmdlinerunner</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>init-dataload-dbscript</name>
+    <name>init-dataload-cmdlinerunner</name>
     <description>Initially populate the data using dbscripts</description>
 
     <modules>
