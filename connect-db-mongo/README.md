@@ -31,15 +31,24 @@ I have created the below 4 services and specify the more details about the servi
 
 We can directly connect the MongoDB then, check for the collections are created after the below API will be called. We can select the specific collection and see the respective data has been stored successfully.
 
-```banking_seq``` collection will be looks like below
+```banking_seq``` collection will be looks like 
+
 ![banking_seq.png](_img/banking_seq.png)
+
 ```customer``` collection will be looks like below
+
 ![customer_db.png](_img/customer.png)
+
 ```bank_transaction``` collection will be looks like below
+
 ![bank_transaction.png](_img/bank_transaction.png)
+
 ```loan``` collection will be looks like below
+
 ![loan.png](_img/loan.png)
+
 ```loan_transaction``` collection will be looks like below
+
 ![loan_transaction.png](_img/loan_transaction.png)
 
 ### API Details:
